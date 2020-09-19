@@ -32,8 +32,10 @@ const Header = ({ siteTitle }) => (
             src={gatsbyLogo}
             alt="Gatsby Logo"
           />
+          
         </Link>
       </h1>
+      <Link to='/about'>about</Link>
     </div>
   </header>
 )
