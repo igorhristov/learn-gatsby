@@ -32,10 +32,10 @@ module.exports = {
     // `gatsby-plugin-offline`,
 
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/posts`,
-        name: "posts",
+        name: 'posts',
       },
     },
     {
@@ -53,5 +53,15 @@ module.exports = {
         plugins: [],
       },
     },
+
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+    },
   ],
-}
+};

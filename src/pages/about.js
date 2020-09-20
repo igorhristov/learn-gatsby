@@ -10,7 +10,7 @@ import gatsbyAstronaut from '../images/gatsby-astronaut.png';
 const About = () => {
   return (
     <Layout>
-      <div>
+      <div className="my-background">
         <h1>About Us</h1>
         <div style={{ textAlign: 'center' }}>
           <img
