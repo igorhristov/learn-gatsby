@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../../components/layout2';
 
@@ -17,11 +17,13 @@ export default ({ data }) => {
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <hr />
-            <h3>{node.frontmatter.title}</h3>
-            <p>
-              <i>{node.frontmatter.date}</i>
-            </p>
-            <p>{node.excerpt}</p>
+            <Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
+              <h3>{node.frontmatter.title}</h3>
+              <p>
+                <i>{node.frontmatter.date}</i>
+              </p>
+              <p>{node.excerpt}</p>
+            </Link>
           </div>
         ))}
       </div>
@@ -41,6 +43,9 @@ export const query = graphql`
             date
           }
           excerpt
+          fields {
+            slug
+          }
         }
       }
     }
