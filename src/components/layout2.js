@@ -39,6 +39,7 @@ const Layout2 = ({ children }) => {
               <ListLink to="/">Home</ListLink>
               <ListLink to="/page-2">page 2</ListLink>
               <ListLink to="/about">About</ListLink>
+              <ListLink to="/blog">Blog</ListLink>
             </ul>
           </header>
           {children}
