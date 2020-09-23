@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import styles from './about.module.css';
 import astronaut from '../../images/gatsby-astronaut.png';
 
@@ -16,18 +17,19 @@ const User = props => (
   </div>
 );
 
-const Team = () => {
+const Team = ({ data }) => {
+  console.log(data);
   return (
     <Layout>
       <div>
         <h1>The Team</h1>
 
         <User
-          username="Igor Hristov"
+          username={data.site.siteMetadata.author}
           avatar={astronaut}
           excerpt="Full-stack web developer. Founder of some website.com"
         />
-        
+
         <p>
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
@@ -45,5 +47,15 @@ const Team = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        author
+      }
+    }
+  }
+`;
 
 export default Team;
