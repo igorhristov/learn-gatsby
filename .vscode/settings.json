@@ -1,0 +1,11 @@
+{
+    "launch": {
+
+        "configurations": [],
+        "compounds": []
+    },
+
+    "git.enabled": true,
+
+    "git.path":"D:\\Program Files(x86)\\Git\\mingw64\\bin\\git.exe"
+ }
