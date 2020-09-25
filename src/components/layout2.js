@@ -22,7 +22,7 @@ const Layout2 = ({ children }) => {
           file(relativePath: { regex: "/gatsby-astronaut/" }) {
             childImageSharp {
               fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_tracedSVG
               }
             }
           }
