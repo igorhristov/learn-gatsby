@@ -14,13 +14,13 @@ export default ({ data }) => {
   return (
     <Layout>
       <div>
-        <Helmet>
+        {/* <Helmet>
           <meta charset="UTF-8" />
           <title>My Blog Posts Overview</title>
           <meta name="description" content="Web tutorials"></meta>
           <meta name="keywords" content="React, JavaScript, Gatsby"></meta>
           <meta name="author" content="Igor Hristov"></meta>
-        </Helmet>
+        </Helmet> */}
 
         <Headline>My Blog Posts</Headline>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
