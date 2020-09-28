@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Learning Gatsby yeee`,
@@ -67,8 +71,18 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
     },
     //Adds drop-in support for making a Gatsby site work offline and more resistant to bad network connections. It uses Workbox Build to create a service worker for the site and loads the service worker into the client.
-    
+
     // 'gatsby-plugin-offline'
     `gatsby-plugin-offline`,
+    `gatsby-plugin-playground`,
+
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
   ],
 };
