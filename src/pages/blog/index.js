@@ -10,7 +10,7 @@ const Headline = styled.h1`
   color: cornflowerblue;
 `;
 
-export default ({ data }) => {
+export default ( ) => {
   return (
     <Layout>
       <div>
@@ -23,8 +23,8 @@ export default ({ data }) => {
         </Helmet> */}
 
         <Headline>My Blog Posts</Headline>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+        {/* <h4>{data.allMarkdownRemark.totalCount} Posts</h4> */}
+        {/*data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <hr />
             <Link to={node.fields.slug} style={{ textDecoration: 'none' }}>
@@ -35,29 +35,29 @@ export default ({ data }) => {
               <p>{node.excerpt}</p>
             </Link>
           </div>
-        ))}
+        ))*/}
       </div>
     </Layout>
   );
 };
 
-export const query = graphql`
-  query {
-    allMarkdownRemark {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date
-          }
-          excerpt
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`;
+// const query = graphql`
+//   query {
+//     allMarkdownRemark {
+//       totalCount
+//       edges {
+//         node {
+//           id
+//           frontmatter {
+//             title
+//             date
+//           }
+//           excerpt
+//           fields {
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
